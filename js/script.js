@@ -2,8 +2,6 @@ let randomNumber = Math.floor(Math.random() * 3 + 1);
 
 console.log("Wylosowana liczba to: " + randomNumber);
 
-let computerMove = "nieznany ruch";
-
 if (randomNumber == 1) {
   computerMove = "Kamień";
 } else if (randomNumber == 2) {
@@ -29,3 +27,25 @@ if (playerInput == 1) {
 }
 
 printMessage("Gracz wybrał: " + playerMove);
+
+if (playerMove == "nieznany ruch") {
+  printMessage("Powtórz wybór!");
+} else if (
+  (computerMove == "Kamień" && playerMove == "Papier") ||
+  (computerMove == "Papier" && playerMove == "Nożyce") ||
+  (computerMove == "Nożyce" && playerMove == "Kamień")
+) {
+  printMessage("Wygrywasz!");
+} else if (
+  (computerMove == "Papier" && playerMove == "Kamień") ||
+  (computerMove == "Kamień" && playerMove == "Nożyce") ||
+  (computerMove == "Nożyce" && playerMove == "Papier")
+) {
+  printMessage("Przegrywasz!");
+} else if (
+  (computerMove == "Kamień" && playerMove == "Kamień") ||
+  (computerMove == "Papier" && playerMove == "Papier") ||
+  (computerMove == "Nożyce" && playerMove == "Nożyce")
+) {
+  printMessage("Remis!");
+}
