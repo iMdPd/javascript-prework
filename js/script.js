@@ -37,7 +37,7 @@ if (playerMove == "nieznany ruch") {
   (computerMove == "Papier" && playerMove == "Nożyce") ||
   (computerMove == "Nożyce" && playerMove == "Kamień")
 ) {
- printMessage("Wygrywasz!");
-} else () {
+  printMessage("Wygrywasz!");
+} else {
   printMessage("Przegrywasz!");
 }
